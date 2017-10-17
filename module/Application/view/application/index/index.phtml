@@ -1,0 +1,42 @@
+<form>
+    <table>
+        <tr>
+            <th>Образование</th>
+            <td><?php echo $this->checkboxList($this->educationsList, 'education', true) ?></td>
+        </tr>
+        <tr>
+            <th>Города</th>
+            <td><?php echo $this->checkboxList($this->cityList, 'city', true) ?></td>
+        </tr>
+    </table>
+    <?php if ($this->refreshable) { ?>}
+        <label for="refresh">Автоматическое обновление</label>
+        <select id="refresh">
+            <option value="0" selected>выключено</option>
+            <option value="1">1 сек</option>
+            <option value="3">3 сек</option>
+            <option value="5">5 сек</option>
+        </select>
+    <?php } ?>
+</form>
+<br />
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Пользователь</th>
+                <th>Образование</th>
+                <th>Город</th>
+            </tr>
+        </thead>
+        <tbody id="content-container">
+        <?php foreach ($this->data as $rowData) { ?>
+            <tr>
+                <?php foreach ($rowData as $cellData) { ?>
+                    <td><?php echo $cellData ?></td>
+                <?php } ?>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+</div>

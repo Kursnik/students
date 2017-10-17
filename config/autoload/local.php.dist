@@ -12,4 +12,9 @@
  */
 
 return [
+    'db' => [
+        'username' => 'text',
+        'password' => 'some',
+        'auth_type' => 'md5',
+    ],
 ];

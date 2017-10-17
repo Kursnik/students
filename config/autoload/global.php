@@ -2,10 +2,11 @@
 
 return [
     'db'              => [
-        'driver'    => 'Pdo_Pgsql',
-        'database ' => 'blog',
-        'hostname'  => 'localhost',
-        'charset'   => 'utf8',
+        'driver'         => 'Pdo',
+        'dsn'            => 'mysql:dbname=students;host=localhost',
+        'driver_options' => array(
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+        ),
     ],
     'service_manager' => [
         'factories' => [

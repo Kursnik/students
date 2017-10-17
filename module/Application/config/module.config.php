@@ -2,6 +2,9 @@
 
 namespace Application;
 
+use Application\Controller\Factory\DefaultControllerFactory;
+use Application\View\Helper\CheckboxList;
+
 return [
     'router' => require_once 'router.php',
 
@@ -27,7 +30,13 @@ return [
 
     'controllers' => [
         'abstract_factories' => [
-            Controller\Factory\DefaultControllerFactory::class,
+            DefaultControllerFactory::class,
+        ],
+    ],
+
+    'view_helpers' => [
+        'invokables' => [
+            'checkboxList'     => CheckboxList::class,
         ],
     ],
 ];
